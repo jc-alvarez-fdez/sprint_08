@@ -3,54 +3,54 @@ import { CommonModule, NumberFormatStyle } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
-import { Product } from '../../_interfaces/product.interface';
-import { ProductoService } from '../../_services/producto.service';
+import { Paciente } from '../../_interfaces/paciente.interface';
+import { PacienteService } from '../../_services/paciente.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { ProgressComponent } from '../../_shared/progress/progress.component';
 
 
 @Component({
-  selector: 'app-list-products',
+  selector: 'app-list-pacientes',
   standalone: true,
   imports: [
     CommonModule,
     RouterLink,
     ProgressComponent
   ],
-  templateUrl: './list-products.component.html',
-  styleUrl: './list-products.component.css'
+  templateUrl: './list-pacientes.component.html',
+  styleUrl: './list-pacientes.component.css'
 })
-export class ListProductsComponent implements OnInit {
+export class ListPacientesComponent implements OnInit {
 
 
-  public listProducts: Product [] = [];
+  public listPacientes: Paciente [] = [];
   loading: boolean = false;
   constructor (
     private http: HttpClient,
-    private _productoService: ProductoService,
+    private _pacienteService: PacienteService,
     private toastr: ToastrService) {}
 
 
   ngOnInit(): void {
-    this.getListProductos();
+    this.getListPacientes();
   }
 
-  getListProductos() {
+  getListPacientes() {
 
     this.loading = true;
-    this._productoService.getListProductos().subscribe((data: Product[]) => {
-    this.listProducts = data;
+    this._pacienteService.getListPacientes().subscribe((data: Paciente[]) => {
+    this.listPacientes = data;
     this.loading = false;
     })
   }
 
-  deleteProduct(id: NumberFormatStyle) {
+  deletePaciente(id: number) {
     this.loading = true;
-    this._productoService.deleteProduct(id).subscribe(data => {
+    this._pacienteService.deletePaciente(id).subscribe(data => {
       console.log(data);
-      this.getListProductos();
-      this.toastr.warning('El producto se ha eliminado de la base de datos', 'Producto eliminado')
+      this.getListPacientes();
+      this.toastr.warning('El paciente se ha eliminado de la base de datos', 'Paciente eliminado')
     });
     }
 

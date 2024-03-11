@@ -3,31 +3,35 @@
 
 <div *ngIf="!loading" class="container">
   <header>
-    <h4>Listado de productos</h4>
-    <button type="button" class="btn btn-primary" routerLink="/add">Añadir producto</button>
+    <h4>Listado de pacientes</h4>
+    <button type="button" class="btn btn-primary" routerLink="/add">Añadir paciente</button>
   </header>
-    <table *ngIf="listProducts.length > 0"  class="table table-hover">
+    <table *ngIf="listPacientes.length > 0"  class="table table-hover">
     <thead>
       <tr>
         <th scope="col">Nombre</th>
-        <th scope="col">Descripción</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Stock</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">DNI</th>
+        <th scope="col">Teléfono</th>
+        <th scope="col">E-mail</th>
+        <th scope="col">Dirección</th>
         <th scope="col"></th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of listProducts" class="table-active">
-        <td>{{item.name}}</td>
-        <td>{{item.description}}</td>
-        <td>{{item.price | currency}}</td>
-        <td>{{item.stock}}</td>
+      <tr *ngFor="let item of listPacientes" class="table-active">
+        <td>{{item.nombre}}</td>
+        <td>{{item.apellidos}}</td>
+        <td>{{item.dni}}</td>
+        <td>{{item.tel}}</td>
+        <td>{{item.email}}</td>
+        <td>{{item.direccion}}</td>
         <td>
           <button type="button" class="btn btn-secondary btn-sm" routerLink="edit/{{item.id}}">Editar</button>
-          <button type="button" (click)="deleteProduct(item.id!)" class="btn btn-danger btn-sm ms-2">Borrar</button></td>
+          <button type="button" (click)="deletePaciente(item.id!)" class="btn btn-danger btn-sm ms-2">Borrar</button></td>
       </tr>
     </tbody>
   </table>
-  <h5 *ngIf="listProducts.length == 0">No hay productos para mostrar</h5>
+  <h5 *ngIf="listPacientes.length == 0">No hay pacientes para mostrar</h5>
 
 </div>

@@ -5,13 +5,13 @@ import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angula
 import { ToastrService } from 'ngx-toastr';
 
 
-import { Product } from '../../_interfaces/product.interface';
-import { ProductoService } from '../../_services/producto.service';
+import { Paciente } from '../../_interfaces/paciente.interface';
+import { PacienteService } from '../../_services/paciente.service';
 import { ProgressComponent } from '../../_shared/progress/progress.component';
 
 
 @Component({
-  selector: 'app-add-edit-product',
+  selector: 'app-add-edit-paciente',
   standalone: true,
   imports: [
     CommonModule,
@@ -19,12 +19,12 @@ import { ProgressComponent } from '../../_shared/progress/progress.component';
     RouterLink,
     ProgressComponent
   ],
-  templateUrl: './add-edit-product.component.html',
-  styleUrl: './add-edit-product.component.css'
+  templateUrl: './add-edit-paciente.component.html',
+  styleUrl: './add-edit-paciente.component.css'
 })
 
 
-export class AddEditProductComponent implements OnInit{
+export class AddEditPacienteComponent implements OnInit{
 
   form: FormGroup;
   loading: boolean = false;
@@ -33,15 +33,17 @@ export class AddEditProductComponent implements OnInit{
 
   constructor(
     private fb: FormBuilder,
-    private _productoService: ProductoService,
+    private _pacienteService: PacienteService,
     private router: Router,
     private toastr: ToastrService,
     private activRouter: ActivatedRoute) {
     this.form = this.fb.group({
-      name: ['', Validators.required],
-      description: ['', Validators.required],
-      price: ['', Validators.required],
-      stock: ['', Validators.required],
+      nombre: ['', Validators.required],
+      apellidos: ['', Validators.required],
+      dni: ['', Validators.required],
+      tel: ['', Validators.required],
+      email: ['', Validators.required],
+      direccion: ['', Validators.required],
     })
     this.id = Number (activRouter.snapshot.paramMap.get('id'));
     console.log(this.id);
@@ -51,54 +53,52 @@ export class AddEditProductComponent implements OnInit{
     if(this.id !=0) {
       // es editar
       this.operacion = 'Editar ';
-      this.getProduct(this.id);
+      this.getPaciente(this.id);
     }
   }
 
-  addProduct() {
-    const product: Product = {
-      name: this.form.value.name,
-      description: this.form.value.description,
-      price: this.form.value.price,
-      stock: this.form.value.stock,
+  addPaciente() {
+    const paciente: Paciente = {
+      nombre: this.form.value.nombre,
+      apellidos: this.form.value.apellidos,
+      dni: this.form.value.dni,
+      tel: this.form.value.tel,
+      email: this.form.value.email,
+      direccion: this.form.value.direccion,
     }
 
     this.loading = true;
 
     if (this.id !==0) { // es editar
-      product.id = this.id;
-      this._productoService.updateProduct(this.id, product).subscribe(() => {
+      paciente.id = this.id;
+      this._pacienteService.updatePaciente(this.id, paciente).subscribe(() => {
         this.loading = false;
-        this.toastr.info(`El producto ${product.name} se ha actualizado`, 'Actualizar producto');
+        this.toastr.info(`El paciente ${paciente.nombre} se ha actualizado`, 'Actualizar paciente');
       this.loading = false;
       this.router.navigate(['/']);
         })
 
     } else { // es añadir
-      this._productoService.saveProduct(product).subscribe(() => {
-        this.toastr.success(`El producto ${product.name} se ha añadido`, 'Nuevo producto');
+      this._pacienteService.savePaciente(paciente).subscribe(() => {
+        this.toastr.success(`El paciente ${paciente.nombre} se ha añadido`, 'Nuevo paciente');
       this.loading = false;
       this.router.navigate(['/']);
       })
     }
-
-
-
-
-
-
   }
 
-  getProduct(id:number) {
+  getPaciente(id:number) {
     this.loading = true;
-    this._productoService.getProduct(id).subscribe((data: Product) => {
+    this._pacienteService.getPaciente(id).subscribe((data: Paciente) => {
       console.log(data);
       this.loading = false;
       this.form.setValue({
-        name: data.name,
-        description: data.description,
-        price: data.price,
-        stock: data.stock
+        nombre: data.nombre,
+        apellidos: data.apellidos,
+        dni: data.dni,
+        tel: data.tel,
+        email: data.email,
+        direccion: data.direccion
       })
     })
   }

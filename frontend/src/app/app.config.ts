@@ -8,7 +8,7 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 
 import { provideToastr } from 'ngx-toastr';
 
-import { Product } from './_interfaces/product.interface';
+import { Paciente } from './_interfaces/paciente.interface';
 
 
 export const appConfig: ApplicationConfig = {

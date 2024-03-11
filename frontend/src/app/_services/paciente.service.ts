@@ -2,42 +2,42 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Product } from '../_interfaces/product.interface';
+import { Paciente } from '../_interfaces/paciente.interface';
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductoService {
+export class PacienteService {
 
   private myAppUrl: string;
   private myApiUrl: string;
 
   constructor(private http: HttpClient) {
     this.myAppUrl = environment.endpoint;
-    this.myApiUrl = 'api/productos/';
+    this.myApiUrl = 'api/pacientes/';
   }
 
   // Endpoints
-  getListProductos(): Observable<Product[]> {
-    return this.http.get<Product[]>(`${this.myAppUrl}${this.myApiUrl}`);
+  getListPacientes(): Observable<Paciente[]> {
+    return this.http.get<Paciente[]>(`${this.myAppUrl}${this.myApiUrl}`);
   }
 
-  deleteProduct(id: number): Observable<void> {
+  deletePaciente(id: number): Observable<void> {
     return this.http.delete<void>(`${this.myAppUrl}${this.myApiUrl}${id}`);
 
   }
 
-  saveProduct(product: Product): Observable<void> {
-    return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`, product);
+  savePaciente(paciente: Paciente): Observable<void> {
+    return this.http.post<void>(`${this.myAppUrl}${this.myApiUrl}`, paciente);
   }
 
-  getProduct(id: number): Observable<Product> {
-    return this.http.get<Product>(`${this.myAppUrl}${this.myApiUrl}${id}`);
+  getPaciente(id: number): Observable<Paciente> {
+    return this.http.get<Paciente>(`${this.myAppUrl}${this.myApiUrl}${id}`);
   }
 
-  updateProduct(id: number, product: Product): Observable<void> {
-    return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, product);
+  updatePaciente(id: number, paciente: Paciente): Observable<void> {
+    return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, paciente);
   }
 
 }

@@ -2,28 +2,38 @@
 <div *ngIf="!loading" class="row mt-5">
   <div class="col-4 offset-4">
     <div class="card bg-secondary mb-3" style="max-width: 25rem;">
-      <div class="card-header text-center">{{ operacion }} producto</div>
+      <div class="card-header text-center">{{ operacion }} paciente</div>
       <div class="card-body">
-        <form [formGroup]="form" (ngSubmit)="addProduct()">
+        <form [formGroup]="form" (ngSubmit)="addPaciente()">
 
-          <input formControlName="name" type="text" class="form-control mt-2"  placeholder="Nombre">
-          <span *ngIf="form.get('name')?.hasError('required') && form.get('name')?.touched">
+          <input formControlName="nombre" type="text" class="form-control mt-2"  placeholder="Nombre">
+          <span *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">
             El campo nombre <strong>es obligatorio</strong>
           </span>
 
-          <input formControlName="description" type="text" class="form-control mt-2"  placeholder="Descripción">
-          <span *ngIf="form.get('description')?.hasError('required') && form.get('description')?.touched">
-            El campo descripción <strong>es obligatorio</strong>
+          <input formControlName="apellidos" type="text" class="form-control mt-2"  placeholder="Apellidos">
+          <span *ngIf="form.get('apellidos')?.hasError('required') && form.get('apellidos')?.touched">
+            El campo apellidos <strong>es obligatorio</strong>
           </span>
 
-          <input formControlName="price" type="number" class="form-control mt-2"  placeholder="Precio">
-          <span *ngIf="form.get('price')?.hasError('required') && form.get('price')?.touched">
-            El campo precio <strong>es obligatorio</strong>
+          <input formControlName="dni" type="text" class="form-control mt-2"  placeholder="DNI">
+          <span *ngIf="form.get('dni')?.hasError('required') && form.get('dni')?.touched">
+            El campo DNI <strong>es obligatorio</strong>
           </span>
 
-          <input  formControlName="stock" type="number" class="form-control mt-2"  placeholder="Stock">
-          <span *ngIf="form.get('stock')?.hasError('required') && form.get('stock')?.touched">
-            El campo stock <strong>es obligatorio</strong>
+          <input formControlName="tel" type="text" class="form-control mt-2"  placeholder="Teléfono">
+          <span *ngIf="form.get('tel')?.hasError('required') && form.get('tel')?.touched">
+            El campo teléfono <strong>es obligatorio</strong>
+          </span>
+
+          <input formControlName="email" type="text" class="form-control mt-2"  placeholder="E-mail">
+          <span *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+            El campo E-mail <strong>es obligatorio</strong>
+          </span>
+
+          <input formControlName="direccion" type="text" class="form-control mt-2" placeholder="Dirección">
+          <span *ngIf="form.get('direccion')?.hasError('required') && form.get('direccion')?.touched">
+            El campo dirección <strong>es obligatorio</strong>
           </span>
 
           <div class="row mt-2 text-center">
@@ -35,7 +45,6 @@
             </div>
            </div>
         </form>
-
       </div>
     </div>
   </div>

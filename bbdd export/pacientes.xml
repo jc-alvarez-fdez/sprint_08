@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<resultset statement="SELECT * FROM sprint_08_db.pacientes
+LIMIT 0, 1000
+"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	<row>
+		<field name="id">1</field>
+		<field name="nombre">Nombre_01</field>
+		<field name="apellidos">Apellidos_01</field>
+		<field name="dni">12345678A</field>
+		<field name="tel">123456789</field>
+		<field name="email">email_01@mail.com</field>
+		<field name="direccion">Dirección, 01, 00001</field>
+		<field name="longitud" xsi:nil="true" />
+		<field name="latitud" xsi:nil="true" />
+	</row>
+
+	<row>
+		<field name="id">2</field>
+		<field name="nombre">Nombre_02</field>
+		<field name="apellidos">Apellidos_02</field>
+		<field name="dni">23456789B</field>
+		<field name="tel">234567890</field>
+		<field name="email">email_02@mail.com</field>
+		<field name="direccion">Dirección, 02, 00002</field>
+		<field name="longitud" xsi:nil="true" />
+		<field name="latitud" xsi:nil="true" />
+	</row>
+
+	<row>
+		<field name="id">3</field>
+		<field name="nombre">Nombre_03</field>
+		<field name="apellidos">Apellidos_03</field>
+		<field name="dni">34567890C</field>
+		<field name="tel">345678901</field>
+		<field name="email">email_03@mail.com</field>
+		<field name="direccion">Dirección, 03, 00003</field>
+		<field name="longitud" xsi:nil="true" />
+		<field name="latitud" xsi:nil="true" />
+	</row>
+
+	<row>
+		<field name="id">4</field>
+		<field name="nombre">Nombre_04</field>
+		<field name="apellidos">Apellidos_04</field>
+		<field name="dni">45678901D</field>
+		<field name="tel">456789012</field>
+		<field name="email">email_04@mail.com</field>
+		<field name="direccion">Dirección, 04, 00004</field>
+		<field name="longitud" xsi:nil="true" />
+		<field name="latitud" xsi:nil="true" />
+	</row>
+
+	<row>
+		<field name="id">5</field>
+		<field name="nombre">Nombre_05</field>
+		<field name="apellidos">Apellidos_05</field>
+		<field name="dni">56789012E</field>
+		<field name="tel">567890123</field>
+		<field name="email">email_05@mail.com</field>
+		<field name="direccion">Dirección, 05, 00005</field>
+		<field name="longitud" xsi:nil="true" />
+		<field name="latitud" xsi:nil="true" />
+	</row>
+
+	<row>
+		<field name="id">6</field>
+		<field name="nombre">Nombre_06</field>
+		<field name="apellidos">Apellidos_06</field>
+		<field name="dni">67890123F</field>
+		<field name="tel">678901234</field>
+		<field name="email">email_06@mail.com</field>
+		<field name="direccion">Dirección, 06, 00006</field>
+		<field name="longitud" xsi:nil="true" />
+		<field name="latitud" xsi:nil="true" />
+	</row>
+</resultset>

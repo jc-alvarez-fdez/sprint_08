@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { NavbarComponent } from './_components/navbar/navbar.component';
-import { ListProductsComponent } from './_components/list-products/list-products.component';
-import { ProductoService } from './_services/producto.service';
+import { ListPacientesComponent } from './_components/list-pacientes/list-pacientes.component';
+import { PacienteService } from './_services/paciente.service';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { ProductoService } from './_services/producto.service';
     RouterOutlet,
     HttpClientModule,
     NavbarComponent,
-    ListProductsComponent,
+    ListPacientesComponent,
 
 
   ],
