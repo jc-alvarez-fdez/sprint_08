@@ -1,40 +1,40 @@
 import e, { Request, Response } from 'express';
-import Producto from '../models/producto.model';
+import Paciente from '../models/paciente.model';
 
 
-// Muestra todos los productos
-export const getProducts = async (req: Request, res: Response) => {
-    const listProductos = await Producto.findAll();
-    res.json(listProductos);
+// Muestra todos los pacientes
+export const getPatients = async (req: Request, res: Response) => {
+    const listPacientes = await Paciente.findAll();
+    res.json(listPacientes);
 }
 
-// Muestra producto por id
-export const getProduct = async (req: Request, res: Response) => {
+// Muestra paciente por id
+export const getPatient = async (req: Request, res: Response) => {
     const { id } = req.params;
-    const producto = await Producto.findByPk(id);
+    const paciente = await Paciente.findByPk(id);
 
-    if (producto) {
-        res.json(producto);
+    if (paciente) {
+        res.json(paciente);
     } else {
         res.status(404).json({
-            msg: `No existe un producto con el id ${id}`
+            msg: `No existe un paciente con el id ${id}`
         })
     };
 }
 
 
-// Elimina producto por id
-export const deleteProduct = async (req: Request, res: Response) => {
+// Elimina paciente por id
+export const deletePatient = async (req: Request, res: Response) => {
     const { id } = req.params;
-    const producto = await Producto.findByPk(id);
-    if (!producto) {
+    const paciente = await Paciente.findByPk(id);
+    if (!paciente) {
         res.status(404).json({
-            msg: `No existe un producto con el id ${id}`
+            msg: `No existe un paciente con el id ${id}`
         })
     } else {
-        await producto.destroy();
+        await paciente.destroy();
         res.json({
-            msg: `El producto se ha eliminado`
+            msg: `El paciente se ha eliminado`
         })
 
     }
@@ -42,14 +42,14 @@ export const deleteProduct = async (req: Request, res: Response) => {
 
 
 
-// Añadir producto
-export const addProduct = async (req: Request, res: Response) => {
+// Añadir paciente
+export const addPatient = async (req: Request, res: Response) => {
     const { body } = req;
     try {
-        await Producto.create(body);
+        await Paciente.create(body);
 
         res.json({
-            msg: 'El producto se ha añadido',
+            msg: 'El paciente se ha añadido',
             body
         });
 
@@ -61,22 +61,22 @@ export const addProduct = async (req: Request, res: Response) => {
     }
 }    
 
-// Modificar producto
-export const updateProduct = async (req: Request, res: Response) => {
+// Modificar paciente
+export const updatePatient = async (req: Request, res: Response) => {
     const { id } = req.params;
     const { body } = req;
 
     try {
-        const producto = await Producto.findByPk(id);
+        const paciente = await Paciente.findByPk(id);
 
-        if (producto) {
-            await producto.update(body);
+        if (paciente) {
+            await paciente.update(body);
             res.json({
-                msg: `El producto se ha actualizado`
+                msg: `El paciente se ha actualizado`
             })
         } else {
             res.status(404).json({
-                msg: `No existe un producto con el id ${id}`
+                msg: `No existe un paciente con el id ${id}`
             })
         } 
     } 

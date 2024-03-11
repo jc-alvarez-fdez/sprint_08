@@ -1,6 +1,6 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors'
-import routesProducto from '../routes/producto.route';
+import router from '../routes/paciente.route';
 import db from '../db/connection';
 
 
@@ -29,7 +29,7 @@ class Server {
             res.json({
                 msg: 'API working'
             })
-            this.app.use('/api/productos', routesProducto);
+            this.app.use('/api/pacientes', router);
 
         })
     }
@@ -57,10 +57,6 @@ class Server {
 
 
 }
-
-
-
-
 
 
 export default Server;

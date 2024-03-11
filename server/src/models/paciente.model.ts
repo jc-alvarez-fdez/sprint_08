@@ -2,20 +2,33 @@ import db from '../db/connection';
 import { DataTypes } from 'sequelize';
 
 
-const Producto = db.define('Producto', {
-    name: {
+const Paciente = db.define('Paciente', {
+    nombre: {
         type: DataTypes.STRING
     },
-    description: {
+    apellidos: {
         type: DataTypes.STRING
     },
-    price: {
-        type: DataTypes.DOUBLE
+    dni: {
+        type: DataTypes.STRING
     },
-    stock: {
+    tel: {
         type: DataTypes.NUMBER
     },
+    email: {
+        type: DataTypes.STRING
+    },
+    direccion: {
+        type: DataTypes.STRING
+    },
+    longitud: {
+        type: DataTypes.DOUBLE
+    },
+    latitud: {
+        type: DataTypes.DOUBLE
+    },
+
 }, {
     timestamps: false // Desactiva las timestamps por defecto (createdAty updatedAt)
   });
-export default Producto
+export default Paciente

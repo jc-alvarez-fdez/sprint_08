@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { addProduct, deleteProduct, getProduct, getProducts, updateProduct } from "../controllers/producto.controller";
+import { addPatient, deletePatient, getPatient, getPatients, updatePatient } from "../controllers/paciente.controller";
 
 const router = Router();
 
-router.get('/', getProducts); //devuelve todos los productos
-router.get('/:id', getProduct); //devuelve producto por id
-router.delete('/:id', deleteProduct); // elimina producto por id
-router.post('/', addProduct); // añade producto
-router.put('/:id', updateProduct);
+router.get('/', getPatients); //devuelve todos los pacientes
+router.get('/:id', getPatient); //devuelve paciente por id
+router.delete('/:id', deletePatient); // elimina paciente por id
+router.post('/', addPatient); // añade paciente
+router.put('/:id', updatePatient); // actualiza paciente
 
 
 export default router;
