@@ -75,14 +75,14 @@ export class AddEditPacienteComponent implements OnInit{
         this.loading = false;
         this.toastr.info(`El paciente ${paciente.nombre} se ha actualizado`, 'Actualizar paciente');
       this.loading = false;
-      this.router.navigate(['/']);
+      this.router.navigate(['/listado-pacientes']);
         })
 
     } else { // es añadir
       this._pacienteService.savePaciente(paciente).subscribe(() => {
         this.toastr.success(`El paciente ${paciente.nombre} se ha añadido`, 'Nuevo paciente');
       this.loading = false;
-      this.router.navigate(['/']);
+      this.router.navigate(['/listado-pacientes']);
       })
     }
   }
