@@ -5,5 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class PlacesService {
 
-  constructor() { }
+  public useLocation?: [number, number];
+
+  constructor() {
+    this.GetUserLocation();
+  }
+
+  public GetUserLocation() {
+    navigator.geolocation.getCurrentPosition (
+      ({coords}) =>  {
+        this.useLocation = [coords.latitude, coords.longitude];
+      });
+ }
+
+
 }

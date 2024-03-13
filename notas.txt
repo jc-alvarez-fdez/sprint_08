@@ -1,0 +1,11 @@
+Al exportar la bbdd vigilar que se importen notas y estructura
+Si sólo se exportan los datos, no funcionará.
+Se ha de exportar la bbdd, no la tabla.
+
+Parece que conecta con root y sin contraseña:
+'sprint_08_db', 'root', '', 
+
+casa:
+'sprint_08_db', 'root', '24MyCaboSQL25'
+
+it: 'sprint_08_db', 'root', '', 
