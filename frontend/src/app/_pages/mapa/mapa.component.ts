@@ -1,26 +1,45 @@
-import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { icon, Map, marker, tileLayer} from 'leaflet';
 import { PlacesService } from '../../_services/places.service';
 
 @Component({
   selector: 'app-mapa',
   standalone: true,
-  imports: [],
+  imports: [
+    CommonModule
+  ],
   templateUrl: './mapa.component.html',
   styleUrl: './mapa.component.css'
 })
 export class MapaComponent implements OnInit {
+
+  geo: any;
+  map: any;
 
   constructor(private _placesService: PlacesService) {}
 
   ngOnInit(): void {
 
     setTimeout(() => {
-      console.log(this._placesService.useLocation);
+      this.geo = this._placesService.useLocation;
     }, 2000);
-
-
-
   }
+
+  ngAfterViewInit() {
+
+    setTimeout(() => {
+      this.map = new Map('map').setView(this.geo, 13); // coordenadas para el mapa inicial
+
+      tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	      maxZoom: 19,
+	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(this.map);
+
+    }, 2000);
+  }
+
+
 
 
 }
