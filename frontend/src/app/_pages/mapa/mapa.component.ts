@@ -39,8 +39,23 @@ export class MapaComponent implements OnInit {
     }, 2000);
   }
 
+  ubicar() {
+     // Personalizar icono
+     /*
+      const myIcon = icon ({
+      iconUrl: '../../../assets/...',
+      iconSize: [25,41],
+    })
+     marker(this.geo,{icon: myIcon}).addTo(this.map).... añadir en esta línea ,{icon...
+    */
+    setTimeout(() => {
+      marker(this.geo).addTo(this.map).bindPopup("<strong>Ésta es mi ubicación</strong>").openPopup();
+    }, 2000)
+  }
 
-
+  recargar (){
+    location.reload();
+  }
 
 }
 
