@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { icon, Map, marker, tileLayer} from 'leaflet';
+import { icon, Map, marker, tileLayer } from 'leaflet';
 import { PlacesService } from '../../_services/places.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class MapaComponent implements OnInit {
   geo: any;
   map: any;
 
-  constructor(private _placesService: PlacesService) {}
+  constructor(private _placesService: PlacesService) { }
 
   ngOnInit(): void {
 
@@ -31,29 +31,29 @@ export class MapaComponent implements OnInit {
     setTimeout(() => {
       this.map = new Map('map').setView(this.geo, 13); // coordenadas para el mapa inicial
 
-      tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	      maxZoom: 19,
-	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
       }).addTo(this.map);
 
     }, 2000);
   }
 
   ubicar() {
-     // Personalizar icono
-     /*
-      const myIcon = icon ({
-      iconUrl: '../../../assets/...',
-      iconSize: [25,41],
-    })
-     marker(this.geo,{icon: myIcon}).addTo(this.map).... añadir en esta línea ,{icon...
-    */
+    // Personalizar icono
+    /*
+     const myIcon = icon ({
+     iconUrl: '../../../assets/...',
+     iconSize: [25,41],
+   })
+    marker(this.geo,{icon: myIcon}).addTo(this.map).... añadir en esta línea ,{icon...
+   */
     setTimeout(() => {
       marker(this.geo).addTo(this.map).bindPopup("<strong>Ésta es mi ubicación</strong>").openPopup();
-    }, 2000)
+    }, 2000);
   }
 
-  recargar (){
+  recargar() {
     location.reload();
   }
 
