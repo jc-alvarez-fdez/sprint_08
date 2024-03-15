@@ -1,7 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { icon, Map, marker, tileLayer } from 'leaflet';
+import { icon, Map, marker, point, tileLayer } from 'leaflet';
 import { PlacesService } from '../../_services/places.service';
+import { HttpClient } from '@angular/common/http';
+import { Paciente } from '../../_interfaces/paciente.interface';
+import { PacienteService } from '../../_services/paciente.service';
+import { Observable, map } from 'rxjs';
 
 @Component({
   selector: 'app-mapa',
@@ -10,52 +14,61 @@ import { PlacesService } from '../../_services/places.service';
     CommonModule
   ],
   templateUrl: './mapa.component.html',
-  styleUrl: './mapa.component.css'
+  styleUrls: ['./mapa.component.css']
 })
 export class MapaComponent implements OnInit {
 
   geo: any;
   map: any;
+  public mapaPacientes: Paciente [] = [];
 
-  constructor(private _placesService: PlacesService) { }
+  constructor(
+    private _placesService: PlacesService,
+    private http: HttpClient,
+    private _pacienteService: PacienteService) {}
 
   ngOnInit(): void {
-
+    // Obtiene la información de geolocalización después de 2 segundos
     setTimeout(() => {
       this.geo = this._placesService.useLocation;
     }, 2000);
+
+    // Obtiene la lista de pacientes
+    this.getMapaPacientes();
   }
 
-  ngAfterViewInit() {
-
-    setTimeout(() => {
-      this.map = new Map('map').setView(this.geo, 13); // coordenadas para el mapa inicial
-
-      tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
-      }).addTo(this.map);
-
-    }, 2000);
+  // Función para obtener la lista de pacientes
+  getMapaPacientes() {
+    this._pacienteService.getListPacientes().subscribe((data: Paciente[]) => {
+      this.mapaPacientes = data;
+      // Inicializa el mapa y agrega los marcadores después de obtener la lista de pacientes
+      this.inicializarMapa();
+    });
   }
 
-  ubicar() {
-    // Personalizar icono
-    /*
-     const myIcon = icon ({
-     iconUrl: '../../../assets/...',
-     iconSize: [25,41],
-   })
-    marker(this.geo,{icon: myIcon}).addTo(this.map).... añadir en esta línea ,{icon...
-   */
-    setTimeout(() => {
-      marker(this.geo).addTo(this.map).bindPopup("<strong>Ésta es mi ubicación</strong>").openPopup();
-    }, 2000);
+  // Función para inicializar el mapa y agregar los marcadores
+  inicializarMapa() {
+    this.map = new Map('map').setView([41.3858407, 2.1525108], 13);
+    // Añade una capa de mapa con OpenStreetMap
+    tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OpenStreetMap France</a>'
+    }).addTo(this.map);
+
+    // Recorre la lista de pacientes y añade un marcador para cada uno
+    this.mapaPacientes.forEach((paciente, index) => {
+      // Crea un marcador con la latitud y la longitud del paciente
+      marker([paciente.longitud, paciente.latitud] as [number, number]).addTo(this.map)
+
+        // Asigna un popup al marcador con la información del paciente
+        .bindPopup(`<strong>${paciente.nombre} ${paciente.apellidos}</strong><br> ${paciente.direccion}`)
+
+        // Abre el popup del marcador
+        .openPopup();
+    });
   }
 
   recargar() {
     location.reload();
   }
-
 }
-

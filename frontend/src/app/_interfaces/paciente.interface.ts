@@ -1,4 +1,3 @@
-import Paciente from '../../../../server/src/models/paciente.model';
 export interface Paciente {
   id?: number;
   nombre: string;
@@ -7,6 +6,7 @@ export interface Paciente {
   tel: number;
   email: string;
   direccion: string;
-  longitud?: number;
   latitud?: number;
+  longitud?: number;
 }
+

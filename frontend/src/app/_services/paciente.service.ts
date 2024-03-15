@@ -40,4 +40,9 @@ export class PacienteService {
     return this.http.put<void>(`${this.myAppUrl}${this.myApiUrl}${id}`, paciente);
   }
 
+  getMapaPacientes(): Observable<Paciente[]> {
+    return this.http.get<Paciente[]>(`${this.myAppUrl}${this.myApiUrl}`);
+  }
+
+
 }

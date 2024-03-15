@@ -3,6 +3,7 @@ import { DataTypes } from 'sequelize';
 
 
 const Paciente = db.define('Paciente', {
+
     nombre: {
         type: DataTypes.STRING
     },

@@ -42,6 +42,7 @@ export class ListPacientesComponent implements OnInit {
     this._pacienteService.getListPacientes().subscribe((data: Paciente[]) => {
     this.listPacientes = data;
     this.loading = false;
+    console.table(`Carga los pacientes en listado ${this.listPacientes}`)
     })
   }
 
