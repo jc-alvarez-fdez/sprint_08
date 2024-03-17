@@ -25,7 +25,7 @@ export class GrafTipoVisitaComponent implements OnInit {
       'Otros'
     ],
     datasets: [{
-      label: 'My First Dataset',
+      label: 'Pacientes trasladados',
       data: [300, 216, 100, 56],
       backgroundColor: [
         'rgb(255, 99, 132)',
@@ -33,7 +33,7 @@ export class GrafTipoVisitaComponent implements OnInit {
         'rgb(255, 205, 86)',
         'rgb(185, 25, 126)'
       ],
-      hoverOffset: 4
+      hoverOffset: 100
     }]
   };
 
