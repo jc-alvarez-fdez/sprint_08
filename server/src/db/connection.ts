@@ -9,10 +9,4 @@ const sequelize = new Sequelize('sprint_08_db', 'root', '', {
 
   export default sequelize;
 
-
-/*
-  casa: 'sprint_08_db', 'root', '24MyCaboSQL25',
-
-it: 'sprint_08_db', 'root', '', 
-
-*/
+  
