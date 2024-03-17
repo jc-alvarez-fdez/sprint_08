@@ -12,29 +12,34 @@ import Chart from 'chart.js/auto';
   styleUrl: './graf-traslados.component.css'
 })
 export class GrafTrasladosComponent implements OnInit {
-  
+
   chart: any;
   data = [
-    { year: 2010, count: 10 },
-    { year: 2011, count: 20 },
-    { year: 2012, count: 15 },
-    { year: 2013, count: 25 },
-    { year: 2014, count: 22 },
-    { year: 2015, count: 30 },
-    { year: 2016, count: 28 },
+    { mes: "enero", pacientes: 459 },
+    { mes: "febrero", pacientes: 390 },
+    { mes: "marzo", pacientes: 287 },
+    { mes: "abril", pacientes: 384 },
+    { mes: "mayo", pacientes: 329 },
+    { mes: "junio", pacientes: 380 },
+    { mes: "julio", pacientes: 321 },
+    { mes: "agosto", pacientes: 218 },
+    { mes: "septiembre", pacientes: 358 },
+    { mes: "octubre", pacientes: 421 },
+    { mes: "noviembre", pacientes: 371 },
+    { mes: "diciembre", pacientes: 229 },
   ];
 
-  
+
   ngOnInit(): void {
-     
+
     this.chart = new Chart('canvas', {
       type: 'bar',
       data: {
-        labels: this.data.map(row => row.year),
+        labels: this.data.map(row => row.mes),
         datasets: [
           {
-            label: 'Acquisitions by year',
-            data: this.data.map(row => row.count)
+            label: 'Pacientes transportados',
+            data: this.data.map(row => row.pacientes)
           }
         ],
       },
