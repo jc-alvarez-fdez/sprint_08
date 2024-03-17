@@ -32,7 +32,7 @@ export class GrafTrasladosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.chart = new Chart('canvas', {
+    this.chart = new Chart('traslados', {
       type: 'bar',
       data: {
         labels: this.data.map(row => row.mes),
