@@ -30,6 +30,7 @@ class Server {
                 msg: 'API working'
             })
             this.app.use('/api/pacientes', router);
+            this.app.use('/api/mapa_pacientes', router);
 
         })
     }

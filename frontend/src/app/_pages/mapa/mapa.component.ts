@@ -1,10 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { icon, Map, marker, point, tileLayer } from 'leaflet';
-import { PlacesService } from '../../_services/places.service';
+import { MapaService } from '../../_services/mapa.service';
 import { HttpClient } from '@angular/common/http';
-import { Paciente } from '../../_interfaces/paciente.interface';
-import { PacienteService } from '../../_services/paciente.service';
+import { MapaPaciente } from '../../_interfaces/mapa.interface';
 import { Observable, map } from 'rxjs';
 
 @Component({
@@ -20,18 +19,17 @@ export class MapaComponent implements OnInit {
 
   geo: any;
   map: any;
-  public mapaPacientes: Paciente [] = [];
+  public mapaPacientes: MapaPaciente [] = [];
 
   constructor(
-    private _placesService: PlacesService,
-    private http: HttpClient,
-    private _pacienteService: PacienteService) {}
+    private _mapaService: MapaService,
+    private http: HttpClient) {}
 
   ngOnInit(): void {
     // Obtiene la información de geolocalización después de 2 segundos
-    setTimeout(() => {
-      this.geo = this._placesService.useLocation;
-    }, 2000);
+    /*setTimeout(() => {
+      this.geo = this._mapaService.useLocation;
+    }, 2000); */
 
     // Obtiene la lista de pacientes
     this.getMapaPacientes();
@@ -39,7 +37,7 @@ export class MapaComponent implements OnInit {
 
   // Función para obtener la lista de pacientes
   getMapaPacientes() {
-    this._pacienteService.getListPacientes().subscribe((data: Paciente[]) => {
+    this._mapaService.getListMapaPacientes().subscribe((data: MapaPaciente[]) => {
       this.mapaPacientes = data;
       // Inicializa el mapa y agrega los marcadores después de obtener la lista de pacientes
       this.inicializarMapa();
