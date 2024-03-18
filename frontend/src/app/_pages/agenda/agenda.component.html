@@ -1,1 +1,11 @@
-<full-calendar [options]="calendarOptions"></full-calendar>
+<div class='demo-app-main'>
+  <full-calendar  [options]='calendarOptions()'>
+    <ng-template #eventContent let-arg>
+      <b>{{ arg.timeText }}</b>
+      <i>{{ arg.event.title }}</i>
+    </ng-template>
+  </full-calendar>
+</div>
+
+
+<!-- *ngIf='calendarVisible()' -->
