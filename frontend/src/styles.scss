@@ -3,13 +3,14 @@
 
 @import '../node_modules/ngx-toastr/toastr.css';
 
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
 
 
 
 :root{
   --transporte:   #a20909;
   --bs-link-hover-color-rgb: $primary;
-  --semiblanc: #ffffff9d;
+  --semiblanc: #ffffffc9;
 }
 
 
@@ -17,9 +18,9 @@ $primary:      #a20909;
 $secondary:    #696464;
 $success:      #0c6a3e;
 $info:         #0dcaf0;
-$warning:       #ffc107;
-$danger:        #dc3545;
-$light:         #cacaca;
+$warning:      #ffc107;
+$danger:       #dc3545;
+$light:        #cacaca;
 $dark:         #363636;
 
 
@@ -40,5 +41,7 @@ $theme-colors: (
 @import '../node_modules/bootstrap/scss/bootstrap.scss';
 
 
-@import 'bootstrap-icons/font/bootstrap-icons.scss';
-
+.destaca {
+  font-weight: bold;
+  color: var(--transporte);
+}

@@ -1,6 +1,7 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors'
-import router from '../routes/paciente.route';
+import routerPatients from '../routes/paciente.route';
+import routerMapaPacientes from '../routes/mapa_pacientes.route'
 import db from '../db/connection';
 
 
@@ -29,8 +30,8 @@ class Server {
             res.json({
                 msg: 'API working'
             })
-            this.app.use('/api/pacientes', router);
-            this.app.use('/api/mapa_pacientes', router);
+            this.app.use('/api/pacientes', routerPatients);
+            this.app.use('/api/mapa_pacientes', routerMapaPacientes);
 
         })
     }

@@ -6,7 +6,5 @@ export interface Paciente {
   tel: number;
   email: string;
   direccion: string;
-  latitud?: number;
-  longitud?: number;
 }
 

@@ -2,7 +2,7 @@ import db from '../db/connection';
 import { DataTypes } from 'sequelize';
 
 
-const MapaPaciente = db.define('mapaPaciente', {
+const MapaPaciente = db.define('mapa_paciente', {
 
     nombre: {
         type: DataTypes.STRING
@@ -22,10 +22,10 @@ const MapaPaciente = db.define('mapaPaciente', {
     direccion: {
         type: DataTypes.STRING
     },
-    longitud: {
+    latitud: {
         type: DataTypes.DOUBLE
     },
-    latitud: {
+    longitud: {
         type: DataTypes.DOUBLE
     },
 

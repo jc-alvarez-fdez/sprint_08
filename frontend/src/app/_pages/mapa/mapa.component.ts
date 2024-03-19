@@ -32,11 +32,11 @@ export class MapaComponent implements OnInit {
     }, 2000); */
 
     // Obtiene la lista de pacientes
-    this.getMapaPacientes();
+    this.getListMapaPacientes();
   }
 
   // Función para obtener la lista de pacientes
-  getMapaPacientes() {
+  getListMapaPacientes() {
     this._mapaService.getListMapaPacientes().subscribe((data: MapaPaciente[]) => {
       this.mapaPacientes = data;
       // Inicializa el mapa y agrega los marcadores después de obtener la lista de pacientes

@@ -22,12 +22,6 @@ const Paciente = db.define('Paciente', {
     direccion: {
         type: DataTypes.STRING
     },
-    longitud: {
-        type: DataTypes.DOUBLE
-    },
-    latitud: {
-        type: DataTypes.DOUBLE
-    },
 
 }, {
     timestamps: false // Desactiva las timestamps por defecto (createdAty updatedAt)
