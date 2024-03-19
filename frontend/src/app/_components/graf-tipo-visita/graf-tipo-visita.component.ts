@@ -10,7 +10,7 @@ import Chart from 'chart.js/auto';
     CommonModule
   ],
   templateUrl: './graf-tipo-visita.component.html',
-  styleUrl: './graf-tipo-visita.component.css'
+  styleUrl: './graf-tipo-visita.component.scss'
 })
 
 

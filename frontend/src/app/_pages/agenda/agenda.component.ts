@@ -18,10 +18,10 @@ import { INITIAL_EVENTS, createEventId } from '../../_helpers/eventos'
     FullCalendarModule,
   ],
   templateUrl: './agenda.component.html',
-  styleUrl: './agenda.component.css'
+  styleUrl: './agenda.component.scss'
 })
 export class AgendaComponent {
-  
+
   calendarVisible = signal(true);
   calendarOptions = signal<CalendarOptions>({
     plugins: [

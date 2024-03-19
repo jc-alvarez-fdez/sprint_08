@@ -20,7 +20,7 @@ import { ProgressComponent } from '../../_shared/progress/progress.component';
     ProgressComponent
   ],
   templateUrl: './add-edit-paciente.component.html',
-  styleUrl: './add-edit-paciente.component.css'
+  styleUrl: './add-edit-paciente.component.scss'
 })
 
 

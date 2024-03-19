@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ],
   templateUrl: './progress.component.html',
-  styleUrl: './progress.component.css'
+  styleUrl: './progress.component.scss'
 })
 export class ProgressComponent {
 

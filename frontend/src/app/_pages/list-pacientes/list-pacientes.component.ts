@@ -19,7 +19,7 @@ import { ProgressComponent } from '../../_shared/progress/progress.component';
     ProgressComponent
   ],
   templateUrl: './list-pacientes.component.html',
-  styleUrl: './list-pacientes.component.css'
+  styleUrl: './list-pacientes.component.scss'
 })
 export class ListPacientesComponent implements OnInit {
 

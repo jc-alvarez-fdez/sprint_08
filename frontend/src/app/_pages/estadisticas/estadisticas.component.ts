@@ -11,7 +11,7 @@ import { GrafTipoVisitaComponent } from '../../_components/graf-tipo-visita/graf
     GrafTipoVisitaComponent
   ],
   templateUrl: './estadisticas.component.html',
-  styleUrl: './estadisticas.component.css'
+  styleUrl: './estadisticas.component.scss'
 })
 export class EstadisticasComponent {
 

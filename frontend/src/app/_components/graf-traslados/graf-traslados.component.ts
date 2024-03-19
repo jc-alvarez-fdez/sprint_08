@@ -9,7 +9,7 @@ import Chart from 'chart.js/auto';
     CommonModule
   ],
   templateUrl: './graf-traslados.component.html',
-  styleUrl: './graf-traslados.component.css'
+  styleUrl: './graf-traslados.component.scss'
 })
 export class GrafTrasladosComponent implements OnInit {
 
