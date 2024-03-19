@@ -3,15 +3,21 @@
   min-width: 290px;
   text-align: center;
 
-  ul {
-    list-style-type: none;
-    text-align: center;
-    display: flex;
-  }
-
   a {
       color: white;
       text-decoration: none;
+  }
+}
+
+#navbarColor01 {
+  //text-align: center;
+
+  ul {
+    list-style-type: none;
+    text-align: center;
+    padding-left: -32px;
+    //margin: 0 auto;
+    display: flex;
   }
 }
 

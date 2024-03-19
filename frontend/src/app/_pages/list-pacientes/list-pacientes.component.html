@@ -27,7 +27,7 @@
         <td>{{item.email}}</td>
         <td>{{item.direccion}}</td>
         <td>
-          <button type="button" class="btn btn-secondary btn-sm" routerLink="/edit/{{item.id}}">Editar</button>
+          <button type="button" class="btn btn-secondary btn-sm" routerLink="/edit/{{item.id}}">Editar <i class="bi bi-pencil-square"></i></button>
           <button type="button" (click)="deletePaciente(item.id!)" class="btn btn-danger btn-sm ms-2">Borrar</button></td>
       </tr>
     </tbody>
@@ -35,3 +35,4 @@
   <h5 *ngIf="listPacientes.length == 0">No hay pacientes para mostrar</h5>
 
 </div>
+

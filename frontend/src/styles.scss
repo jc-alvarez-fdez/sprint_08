@@ -4,6 +4,8 @@
 @import '../node_modules/ngx-toastr/toastr.css';
 
 
+
+
 :root{
   --transporte:   #a20909;
   --bs-link-hover-color-rgb: $primary;
@@ -11,24 +13,32 @@
 }
 
 
-
 $primary:      #a20909;
-
+$secondary:    #696464;
+$success:      #0c6a3e;
+$info:         #0dcaf0;
+$warning:       #ffc107;
+$danger:        #dc3545;
+$light:         #cacaca;
+$dark:         #363636;
 
 
 $theme-colors: (
   "primary":    $primary,
-  // "secondary":  $secondary,
-  // "success":    $success,
-  // "info":       $info,
-  // "warning":    $warning,
-  // "danger":     $danger,
-  // "light":      $light,
-  // "dark":       $dark
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
 
 );
 
 
-
 //estilos bootstrap
-@import 'bootstrap/scss/bootstrap.scss';
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+
+@import 'bootstrap-icons/font/bootstrap-icons.scss';
+
