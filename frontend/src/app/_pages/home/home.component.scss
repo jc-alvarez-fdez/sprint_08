@@ -4,10 +4,16 @@
   background-size: cover;
 }
 h1 {
+  max-width: 65vw;
+  //display: bloc;
+  margin: 0 auto;
   text-align: center;
-  font-size: 4rem;
+  font-size: 3em;
   padding: 1em;
   background-color: var(--semiblanc);
   color: var(--bs-dark);
+  border-radius: 0 0 20px 20px;
+  border-bottom: 3px solid var(--transporte);
+
  }
 
