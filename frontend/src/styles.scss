@@ -11,6 +11,41 @@
   --transporte:   #a20909;
   --bs-link-hover-color-rgb: $primary;
   --semiblanc: #ffffffc9;
+
+  // variables calendario
+  --fc-small-font-size: .85em;
+  --fc-page-bg-color: #fff;
+  --fc-neutral-bg-color: rgba(208, 208, 208, 0.3);
+  --fc-neutral-text-color: #808080;
+  --fc-border-color: #ddd;
+
+  --fc-button-text-color: #fff;
+  --fc-button-bg-color: #a34242; // modificada
+  --fc-button-border-color: #2C3E50;
+  --fc-button-hover-bg-color: #1e2b37;
+  --fc-button-hover-border-color: #7b7679;// modificada
+  --fc-button-active-bg-color: #7b7679;// modificada
+  --fc-button-active-border-color: #7b7679;// modificada
+
+  --fc-event-bg-color:  #a20909; // modificada
+  --fc-event-border-color: #a20909; // modificada
+  --fc-event-text-color: #fff;
+  --fc-event-selected-overlay-color: rgba(0, 0, 0, 0.25);
+
+  --fc-more-link-bg-color: #d0d0d0;
+  --fc-more-link-text-color: inherit;
+
+  --fc-event-resizer-thickness: 8px;
+  --fc-event-resizer-dot-total-width: 8px;
+  --fc-event-resizer-dot-border-width: 1px;
+
+  --fc-non-business-color: rgba(215, 215, 215, 0.3);
+  --fc-bg-event-color: rgb(143, 223, 130);
+  --fc-bg-event-opacity: 0.3;
+  --fc-highlight-color: rgba(188, 232, 241, 0.3);
+  --fc-today-bg-color: rgba(255, 220, 40, 0.15);
+  --fc-now-indicator-color: red;
+
 }
 
 
@@ -20,7 +55,7 @@ $success:      #0c6a3e;
 $info:         #0dcaf0;
 $warning:      #ffc107;
 $danger:       #dc3545;
-$light:        #cacaca;
+$light:        #e8e6e6;
 $dark:         #363636;
 
 

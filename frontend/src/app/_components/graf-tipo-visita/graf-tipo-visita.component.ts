@@ -33,7 +33,7 @@ export class GrafTipoVisitaComponent implements OnInit {
         'rgb(255, 205, 86)',
         'rgb(185, 25, 126)'
       ],
-      hoverOffset: 100
+      hoverOffset: 20
     }]
   };
 

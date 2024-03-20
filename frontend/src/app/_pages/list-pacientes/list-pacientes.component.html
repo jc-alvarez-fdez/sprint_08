@@ -27,8 +27,11 @@
         <td>{{item.email}}</td>
         <td>{{item.direccion}}</td>
         <td>
-          <button type="button" class="btn btn-secondary btn-sm" routerLink="/edit/{{item.id}}">Editar <i class="bi bi-pencil-square"></i></button>
-          <button type="button" (click)="deletePaciente(item.id!)" class="btn btn-danger btn-sm ms-2">Borrar</button></td>
+          <div class="botones">
+            <button type="button" class="btn btn-secondary btn-sm" routerLink="/edit/{{item.id}}">Editar&nbsp;<i class="bi bi-pencil-square"></i></button>
+            <button type="button" (click)="deletePaciente(item.id!)" class="btn btn-danger btn-sm ms-2">Borrar &nbsp;<i class="bi bi-trash2-fill"></i></button>
+          </div>
+        </td>
       </tr>
     </tbody>
   </table>

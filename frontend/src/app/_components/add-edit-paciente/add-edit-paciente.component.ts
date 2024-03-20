@@ -58,6 +58,11 @@ export class AddEditPacienteComponent implements OnInit{
   }
 
   addPaciente() {
+
+    if (!this.form.valid) {
+      return;
+    }
+    
     const paciente: Paciente = {
       nombre: this.form.value.nombre,
       apellidos: this.form.value.apellidos,

@@ -1,7 +1,7 @@
 <app-progress *ngIf="loading" />
 <div *ngIf="!loading" class="row mt-5">
   <div class="col-4 offset-4">
-    <div class="card bg-secondary mb-3" style="max-width: 25rem;">
+    <div class="card bg-light mb-3" style="max-width: 25rem;">
       <div class="card-header text-center">{{ operacion }} paciente</div>
       <div class="card-body">
         <form [formGroup]="form" (ngSubmit)="addPaciente()">
@@ -36,7 +36,7 @@
             El campo dirección <strong>es obligatorio</strong>
           </span>
 
-          <div class="row mt-2 text-center">
+          <div class="row mt-4 text-center">
             <div class="col-6">
               <button type="button" class="btn btn-secondary" routerLink="/listado-pacientes">Volver</button>
            </div>

@@ -1,6 +1,6 @@
 
 .navbar {
-  min-width: 290px;
+  min-width: 350px;
   text-align: center;
 
   a {
@@ -13,17 +13,25 @@
   //text-align: center;
 
   ul {
+    margin-top: 10px;
     list-style-type: none;
     text-align: center;
-    padding-left: -32px;
-    //margin: 0 auto;
+    padding-left: 0;
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 }
 
 
 
+.navbar-expand-lg {
+  ul {
+    margin-top: 0;
+  }
 
+
+}
 
 
 
