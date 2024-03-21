@@ -15,6 +15,9 @@ En el directorio server:
     y en una nueva ventana del terminal, en el mismo directorio
     nodemon dist/index.js
 
+    Lanzar el server
+    http://localhost:3000/
+
 ____________
 
 3. FRONTEND

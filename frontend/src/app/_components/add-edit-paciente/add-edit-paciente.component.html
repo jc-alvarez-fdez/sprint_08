@@ -7,32 +7,32 @@
         <form [formGroup]="form" (ngSubmit)="addPaciente()">
 
           <input formControlName="nombre" type="text" class="form-control mt-2"  placeholder="Nombre">
-          <span *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">
+          <span class="invalid" *ngIf="form.get('nombre')?.hasError('required') && form.get('nombre')?.touched">
             El campo nombre <strong>es obligatorio</strong>
           </span>
 
           <input formControlName="apellidos" type="text" class="form-control mt-2"  placeholder="Apellidos">
-          <span *ngIf="form.get('apellidos')?.hasError('required') && form.get('apellidos')?.touched">
+          <span  class="invalid" *ngIf="form.get('apellidos')?.hasError('required') && form.get('apellidos')?.touched">
             El campo apellidos <strong>es obligatorio</strong>
           </span>
 
           <input formControlName="dni" type="text" class="form-control mt-2"  placeholder="DNI">
-          <span *ngIf="form.get('dni')?.hasError('required') && form.get('dni')?.touched">
+          <span class="invalid" *ngIf="form.get('dni')?.hasError('required') && form.get('dni')?.touched">
             El campo DNI <strong>es obligatorio</strong>
           </span>
 
           <input formControlName="tel" type="text" class="form-control mt-2"  placeholder="Teléfono">
-          <span *ngIf="form.get('tel')?.hasError('required') && form.get('tel')?.touched">
+          <span class="invalid" *ngIf="form.get('tel')?.hasError('required') && form.get('tel')?.touched">
             El campo teléfono <strong>es obligatorio</strong>
           </span>
 
           <input formControlName="email" type="text" class="form-control mt-2"  placeholder="E-mail">
-          <span *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
+          <span class="invalid" *ngIf="form.get('email')?.hasError('required') && form.get('email')?.touched">
             El campo E-mail <strong>es obligatorio</strong>
           </span>
 
           <input formControlName="direccion" type="text" class="form-control mt-2" placeholder="Dirección">
-          <span *ngIf="form.get('direccion')?.hasError('required') && form.get('direccion')?.touched">
+          <span class="invalid" *ngIf="form.get('direccion')?.hasError('required') && form.get('direccion')?.touched">
             El campo dirección <strong>es obligatorio</strong>
           </span>
 
