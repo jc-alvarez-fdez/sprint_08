@@ -10,6 +10,7 @@ import { EstadisticasComponent } from './_pages/estadisticas/estadisticas.compon
 
 export const routes: Routes = [
   { path: "", component: HomeComponent },
+  { path: "home", component: HomeComponent },
   { path: "listado-pacientes", component: ListPacientesComponent },
   { path: "add", component: AddEditPacienteComponent },
   { path: "edit/:id", component: AddEditPacienteComponent },
