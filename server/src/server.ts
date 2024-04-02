@@ -1,8 +1,8 @@
 import express, { Application, Request, Response } from 'express';
 import cors from 'cors'
-import routerPatients from '../routes/paciente.route';
-import routerMapaPacientes from '../routes/mapa_pacientes.route'
-import db from '../db/connection';
+import routerPatients from './routes/paciente.route';
+import routerMapaPacientes from './routes/mapa_pacientes.route'
+import db from './db/connection';
 
 
 class Server {
@@ -19,13 +19,9 @@ class Server {
         this.dbConnect();
     }
 
-    listen() {
-        this.app.listen(this.port, () => {
-            console.log(`Aplicación corriendo en el puerto ${this.port}`)
-        })
-    }
 
-    routes() {
+
+/*     routes() {
         this.app.get('/', (req: Request, res: Response) => {
             res.json({
                 msg: 'API working'
@@ -33,6 +29,17 @@ class Server {
             this.app.use('/api/pacientes', routerPatients);
             this.app.use('/api/mapa_pacientes', routerMapaPacientes);
 
+        })
+    } */
+
+    routes() {
+        this.app.use('/api/pacientes', routerPatients);
+        this.app.use('/api/mapa_pacientes', routerMapaPacientes);
+    }
+
+    listen() {
+        this.app.listen(this.port, () => {
+            console.log(`Aplicación corriendo en el puerto ${this.port}`)
         })
     }
 
