@@ -9,20 +9,6 @@ import { MapaPaciente } from '../_interfaces/mapa.interface';
 })
 export class MapaService {
 
-  /* Geolocalización
-
-   public useLocation?: [number, number];
-
-  constructor() {
-    this.GetUserLocation();
-  }
-
-  public GetUserLocation() {
-    navigator.geolocation.getCurrentPosition (
-      ({coords}) =>  {
-        this.useLocation = [coords.latitude, coords.longitude];
-      });
- } */
 
   private myAppUrl: string;
   private myApiUrl: string;
@@ -33,7 +19,7 @@ export class MapaService {
   }
 
 
-  
+
   // Endpoints
   getListMapaPacientes(): Observable<MapaPaciente[]> {
     return this.http.get<MapaPaciente[]>(`${this.myAppUrl}${this.myApiUrl}`);
