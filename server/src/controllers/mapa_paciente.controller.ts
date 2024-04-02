@@ -1,4 +1,4 @@
-import e, { Request, Response } from 'express';
+import { Request, Response } from 'express';
 import MapaPaciente from '../models/mapa_pacientes.model';
 
 
